@@ -76,7 +76,7 @@ module.exports.bootstrap = function(cb) {
 
 	User.findOneByUsername('israel.ramirez@gmail.com').then(function(data){
         if(!data)
-            User.create({username:'israel.ramirez@gmail.com', name:'Israel Ramirez Garcia', phonemovil: '5522436991',rol:'USER'})
+            User.create({username:'israel.ramirez@gmail.com', name:'Israel Ramirez Garcia', phonemovil: '5522436991',rol:'USER', questionSend: 2})
             .then(function (data){
                 console.log("CREATING USER>>>"+JSON.stringify(data)) 
             }).catch(function(err){
@@ -87,14 +87,32 @@ module.exports.bootstrap = function(cb) {
 	});
 
 
-   /* User.findOne({id:"57488b92ef129f0037c47f51"}).exec(function (err,user){
+
+/*
+    User.findOne({id:"574cd29fd3ba4ed028334d83"}).exec(function (err,user){
 
     	  console.log(user);
 
-    });
-*/
+          Question.findOneByNumberQuestion(3,function(err,preg){
+                if(err)throw err;
+                var resp = {};
+                console.log("pregunta Actual"); 
+                console.log(preg);
+                resp.answer = 2;
+                resp.question = preg;
+                resp.user = user;
+                Answer.create(resp,function(err,data){
+                    if(err){console.log(err);}
+                    user.answerActual = data;
+                    user.answers.push(data);
+                    user.save();
+                })
 
-  
+            });
+    });
+
+
+  */
 
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
