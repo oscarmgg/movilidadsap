@@ -16,7 +16,12 @@ module.exports.bootstrap = function(cb) {
         if(!data) 
             Question.create({numberQuestion:1,
                              textQuestion:"¿Pregunta 1?",
-                             textQuestionCont:"0 Respuesta 1%0D%0A1 Respuesta 2%0D%0A2 Respuesta 3%0D%0A3 Respuesta 4%0D%0A"
+                             textQuestionCont:{
+                                1:"respuesta1",
+                                2:"respuesta2",
+                                3:"respuesta3",
+                                4:"respuesta4"
+                             }
                             })
             .then(function (data){
                 console.log("CREATING QUESTION 1>>>"+JSON.stringify(data));
@@ -31,7 +36,12 @@ module.exports.bootstrap = function(cb) {
         if(!data) 
             Question.create({numberQuestion:2,
                              textQuestion:"¿Pregunta 2?",
-                             textQuestionCont:"0 Respuesta 1%0D%0A1 Respuesta 2%0D%0A2 Respuesta 3%0D%0A3 Respuesta 4%0D%0A"
+                             textQuestionCont:{
+                                1:"respuesta1",
+                                2:"respuesta2",
+                                3:"respuesta3",
+                                4:"respuesta4"
+                             }
                             })
             .then(function (data){
                 console.log("CREATING QUESTION 2>>>"+JSON.stringify(data));
@@ -47,7 +57,12 @@ module.exports.bootstrap = function(cb) {
         if(!data) 
             Question.create({numberQuestion:3,
                              textQuestion:"¿Pregunta 3?",
-                             textQuestionCont:"0 Respuesta 1%0D%0A1 Respuesta 2%0D%0A2 Respuesta 3%0D%0A3 Respuesta 4%0D%0A"
+                             textQuestionCont:{
+                                1:"respuesta1",
+                                2:"respuesta2",
+                                3:"respuesta3",
+                                4:"respuesta4"
+                             }
                             })
             .then(function (data){
                 console.log("CREATING QUESTION 3>>>"+JSON.stringify(data));
@@ -73,7 +88,7 @@ module.exports.bootstrap = function(cb) {
 	});
 
 
-
+/*
 	User.findOneByUsername('israel.ramirez@gmail.com').then(function(data){
         if(!data)
             User.create({username:'israel.ramirez@gmail.com', name:'Israel Ramirez Garcia', phonemovil: '5522436991',rol:'USER', questionSend: 2})
@@ -85,7 +100,7 @@ module.exports.bootstrap = function(cb) {
     }).catch(function(err){
 	            console.error("getUser","createUser",err);
 	});
-
+*/
 
 
 /*

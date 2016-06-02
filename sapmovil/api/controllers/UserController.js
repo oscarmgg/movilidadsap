@@ -6,6 +6,19 @@
  */
 
 module.exports = {
+
+
+	create : function(req,res){
+
+	    var user = req.allParams();
+	    UserService.createUser(user).then(function(data){
+	      res.json(data);
+	    }).catch(function(err){
+	      console.log(err);
+	      res.json(400,err);
+	    })
+	    
+	}
 	
 };
 

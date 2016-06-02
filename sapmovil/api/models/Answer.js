@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
 
   	    answer:'integer',
+  	    answerContest : 'boolean',
         question:{model:'question'},
         user:{model:'user'}
 
