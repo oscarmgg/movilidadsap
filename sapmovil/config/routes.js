@@ -38,7 +38,8 @@ module.exports.routes = {
 
   'post /user/create': 'UserController.create',
   'post /answer/respAnswer' : 'AnswerController.respAnswer',
-  'get /question/getQuestion': 'QuestionController.getQuestion'
+  'get /question/getQuestion': 'QuestionController.getQuestion',
+  'get /user/getDashboard': 'UserController.getDashboard'
 
 
   /***************************************************************************

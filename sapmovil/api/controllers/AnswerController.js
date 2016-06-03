@@ -27,6 +27,7 @@ module.exports = {
 	                console.log("pregunta Actual"); 
 	                console.log(preg);
 	                resp.answer = respuesta;
+	                resp.numberQuestion = questionNumber;
 	                resp.question = preg;
 	                resp.user = user;
 	                resp.answerContest = true;
@@ -35,6 +36,8 @@ module.exports = {
 	                    user.answerActual = data;
 	                    user.answers.push(data);
 	                    user.save();
+	                    preg.questionContest = true;
+	                    preg.save();
 	                    res.json(resp);
 	                })
 

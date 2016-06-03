@@ -11,6 +11,7 @@ module.exports = {
 
   	    answer:'integer',
   	    answerContest : 'boolean',
+  	    numberQuestion: 'integer',
         question:{model:'question'},
         user:{model:'user'}
 

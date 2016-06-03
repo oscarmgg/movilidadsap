@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
 
      	numberQuestion:"integer",
+     	questionContest : 'boolean',
         textQuestion:"string"
 
   }

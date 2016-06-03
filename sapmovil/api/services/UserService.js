@@ -14,6 +14,22 @@ module.exports = {
 	            return deferred.reject(err)
 	        });
     	return deferred.promise;
+	},
+
+
+	getDashboard:function(){
+
+		var deferred = Q.defer();
+			Answer.find().then(function(user){
+	            console.info("GET DASHBOARD",user)
+	            return deferred.resolve(user);
+	        }).catch(function(err){
+	            console.error("UserService","getDashboard",err)
+	            return deferred.reject(err)
+	        });
+    	return deferred.promise;
 	}
+
+
 
 }

@@ -18,7 +18,20 @@ module.exports = {
 	      res.json(400,err);
 	    })
 	    
+	},
+
+
+	getDashboard : function(req,res){
+
+	    UserService.getDashboard().then(function(data){
+	      res.json(data);
+	    }).catch(function(err){
+	      console.log(err);
+	      res.json(400,err);
+	    })
+	    
 	}
+
 	
 };
 
