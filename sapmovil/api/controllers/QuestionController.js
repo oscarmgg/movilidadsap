@@ -8,7 +8,7 @@
 module.exports = {
 
 
-	getQuestion: function (req, res) {
+	/*getQuestion: function (req, res) {
 		var userId = req.allParams().id;
 		var questionNumber = req.allParams().questionNumber;
         User.findOne({id:userId},function(err,user){
@@ -24,7 +24,20 @@ module.exports = {
             
         });
        
+    }*/
+
+
+    getQuestion : function(req,res){
+
+        QuestionService.findQuestion().then(function(data){
+          res.json(data);
+        }).catch(function(err){
+          console.log(err);
+          res.json(400,err);
+        })
+        
     }
+
 
 	
 };
