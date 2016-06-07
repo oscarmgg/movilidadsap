@@ -17,6 +17,7 @@ module.exports = {
 		console.log("RESPUESTA  A PREGUNTA");
 		console.log(userId);
 		console.log(respuesta);
+		console.log(questionNumber);
 		User.findOne({id:userId}).exec(function (err,user){
 
 	    	  console.log(user);
