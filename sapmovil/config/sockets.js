@@ -12,6 +12,23 @@
 
 module.exports.sockets = {
 
+  onConnect: function(session, socket) {
+
+    // By default, do nothing.
+
+    console.log("Conectado");
+
+  },
+
+
+    onDisconnect: function(session, socket) {
+
+    // By default: do nothing.
+
+      console.log("Desconectado");
+  }
+
+
 
   /***************************************************************************
   *                                                                          *
